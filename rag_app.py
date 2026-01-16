@@ -16,7 +16,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 docs = text_splitter.split_documents(documents)
 
 # 3. 임베딩 모델 (Ollama 사용)
-embeddings = OllamaEmbeddings(model="qwen2.5-coder:7b")
+embeddings = OllamaEmbeddings(model="bge-m3:latest")
 
 # 4. Vector DB 생성
 vectorstore = FAISS.from_documents(docs, embeddings)
