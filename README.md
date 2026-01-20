@@ -3,8 +3,7 @@
 본 프로젝트는 **폐쇄망 환경에서 로컬 LLM과 RAG(Retrieval-Augmented Generation)를 활용한
 코딩 어시스턴트 PoC**를 구현한 예제입니다.
 
-LangChain의 **LCEL(LangChain Expression Language)** 구조를 사용하여  
-문서 기반 응답과 일반 LLM 응답을 명확히 분리하는 것을 목표로 합니다.
+LangChain의 **LCEL(LangChain Expression Language)** 구조를 사용하여 문서 기반 응답과 일반 LLM 응답을 명확히 분리하는 것을 목표로 합니다.
 
 ---
 
@@ -19,7 +18,7 @@ LangChain의 **LCEL(LangChain Expression Language)** 구조를 사용하여
 
 ## 2. 핵심 특징
 
-- LCEL 기반 RAG 체인 구성 (RetrievalQA 미사용)
+- LCEL 기반 RAG 체인 구성
 - 내부 문서 우선 응답
 - 문서가 없으면 답변 거부
 - 선택형 일반 설명 (사용자 요청 시)
@@ -30,21 +29,10 @@ LangChain의 **LCEL(LangChain Expression Language)** 구조를 사용하여
 
 ## 3. 시스템 구성
 
-아래는 본 PoC의 전체 시스템 흐름입니다.
-[Streamlit UI]
-|
-v
-[ask_rag API]
-|
-v
-[Retriever (FAISS)]
-|
-v
-[LCEL RAG Chain]
-|
-v
-[Local LLM (Ollama)]
+PoC의 시스템 흐름
+[Streamlit UI] → [ask_rag API]  → [Retriever (FAISS)]  → [LCEL RAG Chain]  → [Local LLM (Ollama)]
 
+기술스택 : 
 - UI: Streamlit
 - Retrieval: FAISS Vector DB
 - Chain: LangChain LCEL
@@ -55,6 +43,7 @@ v
 ## 4. 프로젝트 구조
 
 프로젝트 디렉터리 구조는 다음과 같습니다.
+
 project/
 ├─ app.py # Streamlit UI
 ├─ rag_app.py # LCEL 기반 RAG 로직
