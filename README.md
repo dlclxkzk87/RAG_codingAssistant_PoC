@@ -29,7 +29,8 @@ LangChain의 **LCEL(LangChain Expression Language)** 구조를 사용하여 문�
 
 ## 3. 시스템 구성
 
-PoC의 시스템 흐름
+PoC의 시스템 흐름 :
+
 [Streamlit UI] → [ask_rag API]  → [Retriever (FAISS)]  → [LCEL RAG Chain]  → [Local LLM (Ollama)]
 
 기술스택 : 
@@ -43,7 +44,7 @@ PoC의 시스템 흐름
 ## 4. 프로젝트 구조
 
 프로젝트 디렉터리 구조는 다음과 같습니다.
-
+```bash
 project/
 ├─ app.py # Streamlit UI
 ├─ rag_app.py # LCEL 기반 RAG 로직
@@ -52,7 +53,7 @@ project/
 ├─ README.md
 └─ data/
 └─ internal_guide.txt # 내부 문서 샘플
-
+```
 
 ---
 
