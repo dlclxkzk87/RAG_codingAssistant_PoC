@@ -1,9 +1,8 @@
 # 폐쇄망 로컬 AI 코딩 어시스턴트 (LCEL 기반 RAG PoC)
 
-본 프로젝트는 **폐쇄망 환경에서 로컬 LLM과 RAG(Retrieval-Augmented Generation)를 활용한
-코딩 어시스턴트 PoC**를 구현한 예제입니다.
+본 프로젝트는 **폐쇄망 환경에서 로컬 LLM과 RAG를 활용한 코딩 어시스턴트 PoC**를 목적으로 
 
-LangChain의 **LCEL(LangChain Expression Language)** 구조를 사용하여 문서 기반 응답과 일반 LLM 응답을 명확히 분리하는 것을 목표로 합니다.
+LangChain의 **LCEL(LangChain Expression Language)** 구조를 사용하여 문서 기반 응답과 일반 LLM 응답을 명확히 분리하는 것을 목표로 진행하였습니다.
 
 ---
 
@@ -43,7 +42,7 @@ PoC의 시스템 흐름 :
 
 ## 4. 프로젝트 구조
 
-프로젝트 디렉터리 구조는 다음과 같습니다.
+프로젝트 디렉터리 구조
 ```bash
 project/
 ├─ app.py # Streamlit UI
@@ -73,6 +72,8 @@ project/
 python -m venv venv
 venv\Scripts\activate      # Windows
 # source venv/bin/activate # macOS / Linux 
+
+deactivate # 가상환경 종료 시 
 ```
 ### 2. 패키지 설치
 ```
@@ -84,6 +85,7 @@ pip install -r requirements.txt
 ```bash
 ollama pull llama3
 ollama pull bge-m3
+ollama pull qwen2.5-coder:7b
 ```
 
 설치된 모델 확인: 
@@ -95,7 +97,7 @@ ollama list
 
 ## 8. 실행 방법
 
-아래 명령으로 Streamlit 앱을 실행합니다.
+아래 명령으로 Streamlit 앱을 실행.
 ```bash
 streamlit run app.py
 ```
